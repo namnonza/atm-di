@@ -1,5 +1,8 @@
 package atm;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * A bank customer with a checking and a savings account.
  */
