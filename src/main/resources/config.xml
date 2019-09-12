@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="atmSimulator" class="atm.ATMSimulator">
+        <constructor-arg ref="atm"></constructor-arg>
+    </bean>
+    <bean id="atm" class="atm.ATM">
+        <constructor-arg ref="bank"></constructor-arg>
+    </bean>
+    <bean id="bank" class="atm.Bank">
+        <constructor-arg ref="jdbcsqliteconnection"></constructor-arg>
+    </bean>
+    <bean id="dataSource" class="atm.DataSource">
+        <constructor-arg value="customers.txt"></constructor-arg>
+    </bean>
+    <bean id="jdbcsqliteconnection" class="jdbc.JdbcSQLiteConnection">
+        <constructor-arg value="ATM.db"></constructor-arg>
+    </bean>
+    <bean id="account" class="atm.Account"></bean>
+    <bean id="customer" class="atm.Customer"></bean>
+
+</beans>
